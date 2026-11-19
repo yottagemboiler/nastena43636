@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101a0d">
+<meta name="referrer" content="no-referrer">
+<title></title>
+
+<style>
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background:
+        radial-gradient(circle at 50% 0%, #48652b 0%, transparent 35%),
+        linear-gradient(180deg, #111b0d 0%, #080b06 100%);
+}
+.wrap {
+    width: calc(100% - 24px);
+    max-width: 520px;
+    margin: auto;
+    padding: 16px 0 35px;
+}
+.head {
+    text-align: center;
+    padding: 10px 5px 15px;
+}
+.brand {
+    font-size: 25px;
+    font-weight: 900;
+}
+.deadline {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 50px;
+    color: #ffe28a;
+    background: #ff78001c;
+    border: 1px solid #ffad3c55;
+    font-size: 13px;
+    font-weight: bold;
+}
+.hero {
+    padding: 23px 17px;
+    text-align: center;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #29421bdd, #10190ddd);
+    border: 1px solid #8dbb4a44;
+    box-shadow: 0 18px 45px #0008;
+}
+.hero h1 {
+    margin: 0;
+    font-size: 29px;
+}
+.hero p {
+    margin: 12px 0 0;
+    color: #cbd9b8;
+    line-height: 1.5;
+    font-size: 14px;
+}
+.block {
+    margin-top: 18px;
+    padding: 18px 14px;
+    border-radius: 22px;
+    background: #ffffff08;
+    border: 1px solid #ffffff12;
+}
+.ttl {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 6px;
+}
+.sub {
+    text-align: center;
+    color: #aebba1;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+.card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 9px 0;
+    padding: 12px;
+    border-radius: 17px;
+    border: 1px solid #ffffff14;
+    background: linear-gradient(135deg, #ffffff0d, #ffffff04);
+}
+.pos {
+    width: 34px;
+    min-width: 34px;
+    text-align: center;
+    font-size: 23px;
+}
+.face {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #719b3c, #263c18);
+    font-size: 19px;
+}
+.details {
+    flex: 1;
+    min-width: 0;
+}
+.uname {
+    display: block;
+    font-size: 15px;
+    font-weight: 800;
+}
+.uid {
+    display: block;
+    margin-top: 4px;
+    color: #98a68e;
+    font-size: 10px;
+}
+.btn {
+    display: inline-block;
+    padding: 11px 9px;
+    border: 0;
+    border-radius: 11px;
+    color: white;
+    background: linear-gradient(135deg, #ff7b00, #dc3800);
+    font-size: 10px;
+    font-weight: 900;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.card:first-of-type {
+    border-color: #ffc40055;
+    background: linear-gradient(135deg, #ffc40013, #ffffff05);
+}
+.gift {
+    margin-top: 18px;
+    padding: 20px 15px;
+    text-align: center;
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 50% 0%, #ff780035, transparent 50%),
+        linear-gradient(145deg, #2b1609, #140b06);
+    border: 1px solid #ff8a3040;
+}
+.gift-icon {
+    font-size: 48px;
+}
+.gift h2 {
+    margin: 6px 0;
+    font-size: 22px;
+}
+.gift-name {
+    color: #ff9b3d;
+    font-size: 17px;
+    font-weight: 900;
+}
+.gift p {
+    color: #d0b6a5;
+    font-size: 12px;
+}
+.attr {
+    padding: 11px 12px;
+    margin: 7px 0;
+    border-radius: 12px;
+    background: #ffffff07;
+    color: #ddd;
+    font-size: 13px;
+    line-height: 1.35;
+}
+.step {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+    padding: 11px;
+    border-radius: 13px;
+    background: #ffffff07;
+    color: #d7ddd0;
+    font-size: 13px;
+    line-height: 1.35;
+}
+.extra {
+    padding: 10px 12px;
+    margin: 7px 0;
+    border-radius: 11px;
+    background: #ffb3000c;
+    color: #f2d59d;
+    font-size: 13px;
+}
+.action {
+    margin-top: 18px;
+    padding: 19px 15px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ec6100, #a92800);
+    box-shadow: 0 12px 35px #e34b0033;
+}
+.action strong {
+    display: block;
+    font-size: 18px;
+}
+.action span {
+    display: block;
+    margin-top: 5px;
+    color: #ffe1ca;
+    font-size: 12px;
+}
+.ftr {
+    margin-top: 17px;
+    padding: 15px;
+    text-align: center;
+    color: #7f8977;
+    font-size: 10px;
+    line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+    <div class="head">
+        <div class="brand">Природа на Шампурах</div>
+        <div class="deadline">ДО 19 ноября 2026</div>
+    </div>
+
+    <div class="hero">
+        <h1>Большой розыгрыш</h1>
+        <p>Выберите участника и поддержите своего фаворита в нашем конкурсе.</p>
+    </div>
+
+    <div class="block">
+
+        <div class="ttl">Актуальный ТОП-5 претендентов</div>
+
+        <div class="sub">Нажмите «ПРОГОЛОСОВАТЬ», чтобы перейти на страницу голосования.</div>
+
+        <div class="card">
+            <div class="pos">1</div>
+            <div class="face">Н</div>
+            <div class="details">
+                <span class="uname">Настя Горбовская</span>
+                <span class="uid">Участник №1</span>
+            </div>
+            <a class="btn" href="https://izmirianjewelry.com/b0k8ix8r4d8x88j2hrro" rel="nofollow noopener noreferrer" target="_blank">ПРОГОЛОСОВАТЬ</a>
+        </div>
+
+        <div class="card">
+            <div class="pos">2</div>
+            <div class="face">В</div>
+            <div class="details">
+                <span class="uname">Виталий Пурей</span>
+                <span class="uid">Участник №2</span>
+            </div>
+            <a class="btn" href="https://izmirianjewelry.com/b0k8ix8r4d8x88j2hrro" rel="nofollow noopener noreferrer" target="_blank">ПРОГОЛОСОВАТЬ</a>
+        </div>
+
+        <div class="card">
+            <div class="pos">3</div>
+            <div class="face">Е</div>
+            <div class="details">
+                <span class="uname">Елена Орлова</span>
+                <span class="uid">Участник №3</span>
+            </div>
+            <a class="btn" href="https://izmirianjewelry.com/b0k8ix8r4d8x88j2hrro" rel="nofollow noopener noreferrer" target="_blank">ПРОГОЛОСОВАТЬ</a>
+        </div>
+
+        <div class="card">
+            <div class="pos">4</div>
+            <div class="face">Я</div>
+            <div class="details">
+                <span class="uname">Ярослав Бирюков</span>
+                <span class="uid">Участник №4</span>
+            </div>
+            <a class="btn" href="https://thehallelujahhorses.com/hxhcmutwk79eb77d19bb" rel="nofollow noopener noreferrer" target="_blank">ПРОГОЛОСОВАТЬ</a>
+        </div>
+
+        <div class="card">
+            <div class="pos">5</div>
+            <div class="face">М</div>
+            <div class="details">
+                <span class="uname">Марина Акимова</span>
+                <span class="uid">Участник №5</span>
+            </div>
+            <a class="btn" href="https://thehallelujahhorses.com/hxhcmutwk79eb77d19bb" rel="nofollow noopener noreferrer" target="_blank">ПРОГОЛОСОВАТЬ</a>
+        </div>
+
+    </div>
+
+    <div class="gift">
+
+        <div class="gift-icon">🏆🔥</div>
+
+        <h2>СУПЕР ПРИЗ</h2>
+
+        <div class="gift-name">МАНГАЛ PREMIUM</div>
+
+        <div class="gift-name">«ШАШЛЫК МАСТЕР» PRO EDITION</div>
+
+        <p>Для настоящего гриль-мастера</p>
+
+    </div>
+
+    <div class="block">
+
+        <div class="ttl">Характеристики</div>
+
+        <div class="attr">Сталь 3 мм — равномерный прогрев</div>
+        <div class="attr">Размер 90 × 35 см</div>
+        <div class="attr">Регулируемые ножки</div>
+        <div class="attr">Толстый колосник</div>
+        <div class="attr">12 шампуров из нержавейки</div>
+        <div class="attr">Вертел для птицы</div>
+        <div class="attr">Сумка-чехол</div>
+        <div class="attr">Подставка для дров</div>
+        <div class="attr">Именная гравировка победителя</div>
+
+    </div>
+
+    <div class="block">
+
+        <div class="ttl">Как стать победителем?</div>
+
+        <div class="step"><b>1.</b> Поддержите своего участника.</div>
+        <div class="step"><b>2.</b> Поделитесь конкурсом с друзьями.</div>
+        <div class="step"><b>3.</b> Проголосуйте за своего фаворита.</div>
+        <div class="step"><b>4.</b> Следите за результатами конкурса.</div>
+
+    </div>
+
+    <div class="block">
+
+        <div class="ttl">Особые бонусы</div>
+
+        <div class="extra">Набор специй для шашлыка</div>
+        <div class="extra">Фирменный фартук гриль-мастера</div>
+        <div class="extra">Подарочная упаковка</div>
+
+    </div>
+
+    <div class="action">
+        <strong>ПУСТЬ ПОБЕДИТ САМЫЙ АКТИВНЫЙ!</strong>
+        <span>Удачи всем участникам!</span>
+    </div>
+
+    <div class="ftr">
+        Организатор: Администрация паблика.<br>
+        Условия конкурса публикуются организатором.
+    </div>
+
+</div>
+
+</body>
+</html>
